@@ -9,8 +9,8 @@ import (
 )
 
 type User struct {
-	ID   int
-	Name string
+	ID   int    `json:"id"`
+	Name string `json:"name"`
 }
 
 type UserUsecase interface {
