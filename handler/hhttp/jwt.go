@@ -6,12 +6,12 @@ import (
 )
 
 type authToken struct {
-	Token string `json:"token,omiempty"`
-	Expired int64 `json:"token,omiempty"`
+	Token   string `json:"token,omitempty"`
+	Expired int64  `json:"expired,omitempty"`
 }
 
 type authClaims struct {
-	UserID int `json:userId`
+	UserID int `json:"userId"`
 	jwt.StandardClaims
 }
 
@@ -32,8 +32,7 @@ func isExprired(err error) bool {
 	return false
 }
 
-
-func parseJWTToken(token string) (*jwt.Token, error){
+func parseJWTToken(token string) (*jwt.Token, error) {
 	key := viper.GetString("key")
 	return jwt.ParseWithClaims(token, &authClaims{}, func(token *jwt.Token) (interface{}, error) {
 		return []byte(key), nil

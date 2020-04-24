@@ -29,8 +29,6 @@ func e(ctx echo.Context, err error) error {
 		Success: false,
 		Error:   err.Error(),
 	})
-
-	return nil
 }
 
 func s(ctx echo.Context, data interface{}) error {

@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo"
 )
 
+// BindAuthMiddleware bind authentication middlware use JWT token
 func BindAuthMiddleware() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return do(func(ctx *Context) error {

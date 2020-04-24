@@ -7,6 +7,7 @@ import (
 	"github.com/labstack/echo"
 )
 
+// BindHttpUserHandler bind user usecase for handler
 func BindHttpUserHandler(ctx *echo.Echo, userUsecase usercase.UserUsecase) {
 	uh := userHandler{
 		userUsercase: userUsecase,
