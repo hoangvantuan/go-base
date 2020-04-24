@@ -1,0 +1,18 @@
+{
+  "env": "local",
+  "debug": true,
+  "server": {
+    "address": ":9090"
+  },
+  "context": {
+    "timeout": 2
+  },
+  "database": {
+    "host": "localhost",
+    "port": "3306",
+    "user": "root",
+    "pass": "root",
+    "name": "gobase"
+  },
+  "key": "mpZ5GHsdxX7uC8hZy5LKWXbUpq2WNQbQ"
+}
