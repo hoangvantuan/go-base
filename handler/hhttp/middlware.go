@@ -36,6 +36,6 @@ func checkToken(ctx *Context, token string) error {
 	if token == "" {
 		return newTokenNotFound()
 	}
-
+	// TODO need check more condition
 	return nil
 }

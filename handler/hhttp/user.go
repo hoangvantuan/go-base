@@ -24,7 +24,7 @@ type userHandler struct {
 func (uh *userHandler) fetchAll(ctx *Context) error {
 	users, err := uh.userUsercase.FindAll()
 	if err != nil {
-		logger.Warn(helper.Pf("failed to find all user %s", err))
+		logger.Error(helper.Pf("failed to find all user %s", err))
 		return e(ctx, newSystemError())
 	}
 
