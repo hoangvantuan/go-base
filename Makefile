@@ -2,6 +2,9 @@ BINARY=gobase
 test: 
 	go test -v -cover -covermode=atomic ./...
 
+dev:
+	air
+
 build:
 	go build -o ${BINARY} app/*.go
 

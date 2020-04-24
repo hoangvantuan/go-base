@@ -36,5 +36,5 @@ func (uh *userHandler) fetchAll(ctx *Context) error {
 }
 
 func (uh *userHandler) root(ctx *Context) error {
-	return s(ctx, "miichisoft quiz api is working!!!")
+	return s(ctx, "miichisoft quiz api is working :)")
 }

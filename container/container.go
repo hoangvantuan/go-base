@@ -13,10 +13,10 @@ import (
 var dependences = []di.Def{
 	{
 		Name: "user-repository",
-		Build: func(ctn di.Container)(interface{}, error) {
+		Build: func(ctn di.Container) (interface{}, error) {
 			return repo.NewUserRepository(infra.DB), nil
 		},
-	}, 
+	},
 	{
 		Name: "user-service",
 		Build: func(ctn di.Container) (interface{}, error) {
@@ -28,7 +28,7 @@ var dependences = []di.Def{
 		Build: func(ctn di.Container) (interface{}, error) {
 			return usercase.NewUserUsercase(
 				ctn.Get("user-repository").(repo.UserRepository),
-				 ctn.Get("user-service").(*service.UserService)), nil
+				ctn.Get("user-service").(*service.UserService)), nil
 		},
 	},
 }
