@@ -45,7 +45,7 @@ func main() {
 	// middlware
 	e.Use(hhttp.BindAuthMiddleware())
 	// validator
-	// e.Validator = hhttp.NewDefaultValidator()
+	e.Validator = hhttp.NewDefaultValidator()
 
 	userUsecase := ctn.Get("user-usecase").(usercase.UserUsecase)
 
