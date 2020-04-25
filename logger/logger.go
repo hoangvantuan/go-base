@@ -61,6 +61,11 @@ func Debug(msg string, fields ...interface{}) {
 	sugar.Debugf(msg, fields...)
 }
 
+func Sync() {
+	logger.Sync()
+	sugar.Sync()
+}
+
 func getEncoder() zapcore.Encoder {
 	var encoderCfg zapcore.EncoderConfig
 

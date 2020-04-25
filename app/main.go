@@ -4,6 +4,7 @@ import (
 	"github.com/hoangvantuan/go-base/container"
 	"github.com/hoangvantuan/go-base/handler/hhttp"
 	"github.com/hoangvantuan/go-base/infra"
+	"github.com/hoangvantuan/go-base/logger"
 	"github.com/hoangvantuan/go-base/usercase"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -17,6 +18,7 @@ func main() {
 	ctn := container.Boot()
 
 	defer func() {
+		logger.Sync()
 		err := infra.DB.Close()
 		if err != nil {
 			log.Panic(err)
