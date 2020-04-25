@@ -3,6 +3,7 @@ package repo
 import (
 	"github.com/hoangvantuan/go-base/domain/model"
 	"github.com/hoangvantuan/go-base/helper"
+	"github.com/hoangvantuan/go-base/logger"
 	"github.com/jinzhu/gorm"
 	"github.com/pkg/errors"
 )
@@ -18,6 +19,11 @@ type userRepository struct {
 }
 
 func NewUserRepository(db *gorm.DB) UserRepository {
+	// Migrate
+	if err := model.MigrateUser(db); err != nil {
+		logger.Error("failed to migrate data for table user %s", err)
+	}
+
 	return &userRepository{
 		DB: db,
 	}

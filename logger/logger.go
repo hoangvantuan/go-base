@@ -32,33 +32,33 @@ func initZapLogger() {
 }
 
 // Info level
-func Info(msg string, fields ...zapcore.Field) {
+func Info(msg string, fields ...interface{}) {
 	initZapLogger()
-	logger.Info(msg, fields...)
+	sugar.Infof(msg, fields...)
 }
 
 // Warn level
-func Warn(msg string, fields ...zapcore.Field) {
+func Warn(msg string, fields ...interface{}) {
 	initZapLogger()
-	logger.Warn(msg, fields...)
+	sugar.Warnf(msg, fields...)
 }
 
 // Error levele
-func Error(msg string, fields ...zapcore.Field) {
+func Error(msg string, fields ...interface{}) {
 	initZapLogger()
-	logger.Error(msg, fields...)
+	sugar.Errorf(msg, fields...)
 }
 
 // Fatal level
-func Fatal(msg string, fields ...zapcore.Field) {
+func Fatal(msg string, fields ...interface{}) {
 	initZapLogger()
-	logger.Fatal(msg, fields...)
+	sugar.Fatalf(msg, fields...)
 }
 
 // Debug level
-func Debug(msg string, fields ...zapcore.Field) {
+func Debug(msg string, fields ...interface{}) {
 	initZapLogger()
-	logger.Debug(msg, fields...)
+	sugar.Debugf(msg, fields...)
 }
 
 func getEncoder() zapcore.Encoder {
